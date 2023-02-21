@@ -1,0 +1,31 @@
+.main{
+    width: 600px;
+}
+.head{
+    width: 100%;
+    background-color: green;
+    color: white;
+}
+.head h1{
+    margin: 0 10px;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: aqua;
+    justify-content: space-around;
+}
+.container div{
+    margin: 10px 0;
+    width: 30%;
+    border: 1px solid lightgrey;
+    background-color: white;
+}
+.container div img{
+    width: 100%;
+}
+.container div p{
+    padding: 10px;
+    margin: 0;
+}
