@@ -1,0 +1,41 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+.navbar{
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
+}
+.navbar a{
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px 10  px;
+}
+.navbar a:hover{
+    background-color: red;
+    color: black;
+}
+.content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 75%;
+    margin: auto;
+}
+.content h2{
+    border-bottom: 3px solid lightgray;
+    margin-right: 20px;
+}
+.main-content{
+    flex: 30%;
+    margin-right: 100px;
+}
+
+.main-content img{
+    width: 80%;
+}
