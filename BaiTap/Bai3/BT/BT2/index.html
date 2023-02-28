@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/23e4f63e27.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container-fluid p-0 m-0 col-12 row">
+        <div class="container-fluid col-2 mh-100 text-white collapse show" style="background-color: #343a40"
+            id="Side-bar">
+            <div class="p-2 border-light border-bottom">
+                <img class="m-1 rounded-circle" style="width: 30px"
+                    src="data:image/png;base64,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"
+                    alt="" />
+                <span class="text-light">Admin</span>
+            </div>
+            <div class="p-2 border-light border-bottom">
+                <img class="m-1 rounded-circle" style="width: 30px"
+                    src="data:image/png;base64,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"
+                    alt="" />
+                <span class="text-light">Nguyễn Thị B</span>
+            </div>
+            <form class="d-flex p-2">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                <button class="btn btn-outline-light" type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+            <ul class="list-unstyled ps-0">
+                <li class="mb-1">
+                    <div class="container-fluid d-grid p-0">
+                        <button
+                            class="btn btn-toggle d-flex flex-fill align-items-center justify-content-between rounded collapsed text-light active mw-100"
+                            style="background-color: #017bff" data-bs-toggle="collapse" data-bs-target="#home-collapse"
+                            aria-expanded="true">
+                            <span><i class="fa-solid fa-house-user me-1"></i>Trang chủ</span><i
+                                class="fa-solid fa-arrow-down"></i>
+                        </button>
+                    </div>
+                    <div class="collapse show" id="home-collapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li>
+                                <div class="container-fluid d-grid p-0">
+                                    <button
+                            class="btn btn-toggle d-flex flex-fill align-items-center justify-content-between rounded collapsed text-light active mw-100">
+                            <span><i class="fa-regular fa-circle me-1"></i>Thêm mới</span>
+                        </button>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="container-fluid d-grid p-0">
+                                    <button
+                            class="btn btn-toggle d-flex flex-fill align-items-center justify-content-between rounded collapsed text-light active mw-100">
+                            <span><i class="fa-regular fa-circle me-1"></i>Danh sách</span>
+                        </button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="mb-1">
+                    <div class="container-fluid d-grid p-0">
+                        <button
+                            class="btn btn-toggle d-flex flex-fill align-items-center justify-content-between rounded collapsed text-light active mw-100"
+                            style="background-color: #494e54" data-bs-toggle="collapse" data-bs-target="#SP-collapse"
+                            aria-expanded="false">
+                            <span><i class="fa-solid fa-file-circle-plus me-1"></i>Quản lý sản
+                                phẩm</span><i class="fa-solid fa-arrow-down"></i>
+                        </button>
+                    </div>
+                    <div class="collapse" id="SP-collapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li>
+                                <div class="container-fluid d-grid p-0">
+                                    <button
+                            class="btn btn-toggle d-flex flex-fill align-items-center justify-content-between rounded collapsed text-light active mw-100">
+                            <span><i class="fa-regular fa-circle me-1"></i>Thêm mới</span>
+                        </button>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="container-fluid d-grid p-0">
+                                    <button
+                            class="btn btn-toggle d-flex flex-fill align-items-center justify-content-between rounded collapsed text-light active mw-100">
+                            <span><i class="fa-regular fa-circle me-1"></i>Danh sách</span>
+                        </button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="mb-1">
+                    <div class="container-fluid d-grid p-0">
+                        <button
+                            class="btn btn-toggle d-flex flex-fill align-items-center justify-content-between rounded collapsed text-light active mw-100"
+                            style="background-color: #494e54" data-bs-toggle="collapse" data-bs-target="#ND-collapse"
+                            aria-expanded="false">
+                            <span><i class="fa-solid fa-user-plus me-1"></i>Quản lý người dùng</span><i class="fa-solid fa-arrow-down"></i>
+                        </button>
+                    </div>
+                    <div class="collapse" id="ND-collapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li>
+                                <div class="container-fluid d-grid p-0">
+                                    <button
+                            class="btn btn-toggle d-flex flex-fill align-items-center justify-content-between rounded collapsed text-light active mw-100">
+                            <span><i class="fa-regular fa-circle me-1"></i>Thêm mới</span>
+                        </button>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="container-fluid d-grid p-0">
+                                    <button
+                            class="btn btn-toggle d-flex flex-fill align-items-center justify-content-between rounded collapsed text-light active mw-100">
+                            <span><i class="fa-regular fa-circle me-1"></i>Danh sách</span>
+                        </button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                
+            </ul>
+        </div>
+        <div class="col-10 bg-light">
+            <nav class="navbar navbar-expand-lg navbar-light border-bottom" style="background-color: #ffffff">
+                <div class="container-fluid row">
+                    <button class="col" type="button" data-bs-toggle="collapse" data-bs-target="#Side-bar"
+                        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon border-0"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Trang chủ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Đăng xuất</a>
+                            </li>
+                        </ul>
+                        <form class="d-flex">
+                            <button class="btn btn-outline-success border-0" type="submit">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+            <div class="container-fluid d-flex flex-column justify-content-between vh-100 p-0">
+                <div class="container-fluid p-0">
+                    <div class="container-fluid d-flex flex-row flex-wrap align-items-center justify-content-between mb-3"
+                        style="background-color: #f4f6f9">
+                        <h1>Thêm mới sản phẩm</h1>
+                        <div class="">
+                            <a class="text-primary text-decoration-none" href="">Trang chủ</a>
+                        </div>
+                    </div>
+                    <div class="container-fluid row ">
+                        <div class="col-8 ">
+                            <div class="container-fluid border mb-3" style="background-color: #FFFFFF;">
+                                <h3 class="border-bottom py-2">Thông tin sản phẩm</h3>
+                                <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label fw-bold">Tên sản phẩm (*)</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1">
+                              </div>
+                              <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label fw-bold">Mô tả ngắn (*)</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                              </div>
+                              <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label fw-bold">Chi tiết (*)</label>
+                                <textarea class="form-control" id="editor" rows="10"></textarea>
+                              </div>
+                            </div>
+
+                            <div class="container-fluid border mb-3" style="background-color: #FFFFFF;">
+                                <h3 class="border-bottom py-2">Dữ liệu sản phẩm</h3>
+                                <div class="mb-3 row">
+                                    <label for="inputgia" class="col-sm-2 col-form-label fw-bold">Giá bán (*)</label>
+                                    <div class="col-sm-10">
+                                      <input type="number" class="form-control" id="inputgia">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="inputgia" class="col-sm-2 col-form-label fw-bold">Trạng thái (*)</label>
+                                    <div class="col-sm-10">
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected>Open this select menu</option>
+                                            <option value="1">New</option>
+                                            <option value="2">Old</option>
+                                          </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="col-4">
+                            <div class="container-fluid border pb-1 mb-3" style="background-color: #FFFFFF;">
+                                <h3 class="border-bottom py-2">Thể loại sản phẩm</h3>
+                                <div class="mb-3 row">
+                                    <label for="inputgia" class="mb-1 col-form-label fw-bold">Chọn thể loại (*)</label>
+                                    <div class="col-sm-10">
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected>Open this select menu</option>
+                                            <option value="1">Điện thoại</option>
+                                            <option value="2">Laptop</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container-fluid border mb-3" style="background-color: #FFFFFF;">
+                                <h3 class="border-bottom py-2">Ảnh đại diện</h3>
+                                <label for="" class=" col-form-label fw-bold">Chọn ảnh (*)</label>
+                                <p>Định dạng: jpg, png, jpeg, gif, svg - Kích cỡ < 2MB </p>
+                                <div class="input-group pb-3">
+                                    <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                                    <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Upload</button>
+                                  </div>
+                            </div>
+                            <div class="container-fluid border-0 mb-3 " style="background-color: #F8F9FA;">
+                                <div class="input-group p-0 row ">
+                                    <button class="btn btn-outline-primary active col-4 me-2" type="button" id="inputGroupFileAddon04">Lưu</button>
+                                    <button class="btn  col border-dark col-2" type="button" id="inputGroupFileAddon04">Huỷ</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid flex-wrap align-items-end border-top p-0" style="background-color: #ffffff">
+                    <p class="p-3 m-0">Copyright @ 2022</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
+    
+</html>

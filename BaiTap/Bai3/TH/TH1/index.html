@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Layout</title>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active text-light"
+                  aria-current="page"
+                  href="#"
+                  >Trang chủ</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="#">Giới thiệu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="#">Liên hệ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="#">Hỏi đáp</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="#">Tuyển dụng</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle text-light"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Tài khoản
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="row">
+        <div class="article col-9">
+          <div class="col-12 col-md-12">
+            <h2 class="mt-4 mb-4">Danh sách sản phẩm</h2>
+          </div>
+          <div class="row col-12 col-md-12">
+            <div class="col-12 col-md-4 mx-4">
+              <div class="card" style="width: 18rem">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8843rp1uu0gg0n5cThM4y1n4rj3qVHvUImaRqnBQUMawhbj7KQK_JAmyfflyYw2qofaA&usqp=CAU"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Túi xách thời trang</h5>
+                  <p class="card-text">120.000$</p>
+                  <a href="#" class="btn btn-primary">Mua hàng</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4 mx-4">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8843rp1uu0gg0n5cThM4y1n4rj3qVHvUImaRqnBQUMawhbj7KQK_JAmyfflyYw2qofaA&usqp=CAU"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Túi xách thời trang</h5>
+                    <p class="card-text">120.000$</p>
+                    <a href="#" class="btn btn-primary">Mua hàng</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-4 mx-4">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8843rp1uu0gg0n5cThM4y1n4rj3qVHvUImaRqnBQUMawhbj7KQK_JAmyfflyYw2qofaA&usqp=CAU"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Túi xách thời trang</h5>
+                    <p class="card-text">120.000$</p>
+                    <a href="#" class="btn btn-primary">Mua hàng</a>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="side col-3 m-auto">
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-action active">
+              Thể loại sản phẩm
+            </li>
+            <li class="list-group-item list-group-item-action">
+              Thời trang nam
+            </li>
+            <li class="list-group-item list-group-item-action">
+              Thời trang nữ
+            </li>
+            <li class="list-group-item list-group-item-action">Túi xách</li>
+            <li class="list-group-item list-group-item-action">Mỹ phẩm</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-12 col-md-12 footer">
+        <footer class="py-3 my-4">
+          <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item">
+              <a href="#" class="nav-link px-2 text-muted">Trang chủ</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link px-2 text-muted">FAQs</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link px-2 text-muted">Liên hệ</a>
+            </li>
+          </ul>
+          <p class="text-center text-muted">© 2022 Company, Inc</p>
+        </footer>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
