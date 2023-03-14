@@ -46,8 +46,11 @@
         const permonth = document.querySelector('input[name="permonth"]')
         const tongtien = document.querySelector('input[name="tongtien"]')
         const tonglai = document.querySelector('input[name="tonglai"]')
-        permonth.value = tiengoc/(12*thoigian) + tiengoc*laixuat
-        
+        let X = Math.pow(1 + laixuat, thoigian);
+        console.log(333, X);
+        permonth.value = (tiengoc*X*laixuat)/(X-1)
+        tongtien.value = permonth.value*thoigian
+        tonglai.value = tongtien.value - tiengoc
     }
 
     function initialApp() {
