@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <h1>Todo list</h1>
+    <form >
+      <input type="text" placeholder="Add todo" name="todo"/>
+      <button type="submit" onclick="handleSubmitform(event)">Add</button>
+    </form>
+    <ul></ul>
+    <button onclick="handleback()">Back</button>
+    <button onclick="handlenext()">Next</button>
+  </body>
+  <script>
+    let todos = []
+    let page = 1
+
+    const todoList = document.querySelector("ul")
+
+    const form = document.querySelector("form")
+
+    function handleDelete(index) {
+        console.log(99, todos[index].id);
+        render()
+    }
+
+    function handleback() {
+        if (page == 1) {
+            return
+        }
+        page -= 1
+        initialApp(page)
+    }
+
+    function handlenext() {
+        if (todos.length < 10) {
+            return
+        }
+        page += 1
+        initialApp(page)
+    }
+
+    function addTodo(todo) {
+        axios.post("https://jsonplaceholder.typicode.com/todos",todo).then(function(res){
+            initialApp()
+        })
+
+    }
+
+    function handleSubmitform(event) {
+        event.preventDefault()
+        const input = document.querySelector('input[name="todo"]')
+        const value = input.value.trim()
+
+        if (!value) {
+            return alert ("pl enter your todo")
+        }
+
+        addTodo({
+            userId: 1,
+
+            title: value,
+
+            completed: false
+        })
+    }
+
+    function render() {
+        const todoElement = todos.map(function(todo){
+            return `<li>
+                <button> ${todo.title}</button>
+                </li>`
+        })
+        todoList.innerHTML = todoElement.join("")
+
+        const deleteButtons  = document.querySelectorAll("ul button")
+
+
+        deleteButtons.forEach(function(deleteButton, index) {
+            deleteButton.addEventListener("click", function(){
+                handleDelete(index)
+            })
+        })
+
+    }
+    function initialApp(page) {
+        axios.get(`https://jsonplaceholder.typicode.com/todos?_limit=10&_page=${page}`).then((res) => {
+        todos = res.data;
+        render();
+      });
+    }
+    initialApp(page)
+  </script>
+</html>

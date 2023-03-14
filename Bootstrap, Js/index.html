@@ -8,10 +8,47 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
+    <div id="welcome">
+      <p>welcome!</p>
+    </div>
+  
   <script>
-    console.log("Hello World")
+    // var wel = document.getElementById("welcome")
+  //    wel.innerText = "welcome to JS"
+  //    console.log(wel);
+  //    var horizrule = document.createElement("p")
+  //    wel.appendChild(horizrule).innerText = "welcome"
+  //   // var hori = wel.lastChild
+  //   // wel.removeChild(hori)
+  //   wel.style.color = "white"
+  //   wel.style.backgroundColor = "blue"
+  // function callback() {
+  //   wel.innerText = "welcome click"
+  //   wel.style.backgroundColor = "red"
+  //   alert("111")
+
+  //   wel.removeEventListener('click', callback)
+  // }
+  // wel.addEventListener('click' , callback)
+  // var myevent = new customElements("myevent", {
+  //   detail:{
+  //     name: "wilson"
+  //   }, bubbles : true,
+  //   cancalable : false
+  // })
+  // myElement.addEventlistener('myevent', function (event) {
+  //   alert('hello' + event.detail.name)
+  // })
+  // myElement.dispatchEvent(myevent)
+
+  const welcome = $("welcome")
+  console.log(welcome);
+  $("p").click(function(){
+    $("welcome")
+  })
   </script>
   <script src="index.js"></script>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </html>

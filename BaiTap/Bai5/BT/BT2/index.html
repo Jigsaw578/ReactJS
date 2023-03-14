@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <h2>Nhập thông tin khoản vay:</h2>
+      <label for="tiengoc">1) Số tiền: </label>
+      <input type="text" id="tiengoc" name="tiengoc" /><br />
+      <label for="laixuat">2) Lãi xuất hằng năm (%): </label>
+      <input type="text" id="laixuat" name="laixuat" /><br />
+      <label for="thoigian">3) Thời gian trả (năm): </label>
+      <input type="text" id="thoigian" name="thoigian" /><br />
+      <button type="submit">Tính</button>
+    </form>
+    <h2>Thông tin thanh toán:</h2>
+    <label for="permonth">4) Số tiền phải trả hằng tháng: </label>
+    <input type="text" id="permonth" name="permonth" disabled /><br />
+    <label for="tongtien">5) Tổng số tiền phải trả: </label>
+    <input type="text" id="tongtien" name="tongtien" disabled/><br />
+    <label for="tonglai">6) Tổng số lãi phải trả: </label>
+    <input type="text" id="tonglai" name="tonglai" disabled/><br />
+  </body>
+  <script>
+    const form = document.querySelector("form")
+    let tiengoc = 0
+    let laixuat = 0
+    let thoigian = 0
+
+    form.addEventListener("submit", function(event){
+        event.preventDefault()
+        const S = form.elements["tiengoc"]
+        const M = form.elements["laixuat"]
+        const T = form.elements["thoigian"]
+        tiengoc = S.value
+        laixuat = (M.value/100).toFixed(3)
+        thoigian = T.value*12
+        Tinh()
+    })
+
+    function Tinh() {
+        const permonth = document.querySelector('input[name="permonth"]')
+        const tongtien = document.querySelector('input[name="tongtien"]')
+        const tonglai = document.querySelector('input[name="tonglai"]')
+        permonth.value = tiengoc/(12*thoigian) + tiengoc*laixuat
+        
+    }
+
+    function initialApp() {
+        Tinh()
+        
+    }
+    initialApp()
+  </script>
+</html>

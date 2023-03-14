@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+      </tbody>
+    </table>
+  </body>
+  <script>
+    let Employees = [];
+    const tbodyElements = document.querySelector("tbody");
+    function getEmployees() {
+      axios.get("https://jsonplaceholder.typicode.com/users").then((res) => {
+        Employees = res.data;
+        render();
+      });
+    }
+
+    function render() {
+      const trEmployees = Employees.map(function (Employees) {
+        return `
+            <tr>
+                <td>${Employees.name}</td>
+                <td>${Employees.username}</td>
+                <td>${Employees.email}</td>
+            </tr>
+            `;
+      });
+      tbodyElements.innerHTML = trEmployees.join("");
+    }
+    getEmployees();
+  </script>
+</html>

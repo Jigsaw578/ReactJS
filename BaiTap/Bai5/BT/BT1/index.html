@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .container{
+            width: 300px;
+            background-color: aliceblue;
+        }
+        input{
+            margin: 5px;
+        }
+        button{
+            background-color: rgb(147, 147, 255);
+            padding: 3px;
+            align-items: center;
+            margin: 10px;
+        }
+        .ketqua{
+            background-color: rgb(206, 206, 206);
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form onchange="showValue()">
+        <h1>Đo chỉ số (BMI)</h1>
+        <label for="chieucao">Chiều cao</label>
+        <input type="text" id="chieucao" name="chieucao" /><br>
+        <label for="cannang">Cân nặng</label>
+        <input type="text" id="cannang" name="cannang" /><br>
+        <p>Giới tính:</p>
+        <input type="radio" id="nam" name="sex" value="nam" checked="nam"/>
+        <label for="html">Nam</label>
+        <input type="radio" id="nu" name="sex" value="nu" />
+        <label for="css">Nữ</label><br>
+        <button type="submit">Tính BMI</button>
+      </form>
+
+      <div class="ketqua">
+        <h3>Kết quả</h3>
+        <h2>H</h2>
+      </div>
+    </div>
+  </body>
+  <script>
+
+    const form = document.querySelector("form")
+    const gioitinh = form.elements["sex"]
+    let message = ""
+    let BMI = null
+    let sex = null
+    form.addEventListener("submit", function(event){
+        event.preventDefault()
+        const H = document.getElementById("chieucao")
+        const M = document.getElementById("cannang")
+        BMI = (M.value/(H.value**2)).toFixed(2)
+        result()
+        
+    })
+
+    function showValue(){
+      sex = gioitinh.value
+    }
+
+    function result(){
+      const result = document.querySelector(".ketqua h2")
+      if (BMI === null || sex === null) {
+        message = "Hãy nhập chiều cao và cân nặng"
+        
+      } else
+      if (sex === 'nu') {
+        switch (true) {
+          case BMI < 19.1:
+            message = "Gầy"
+            break;
+          case BMI < 25.8:
+            message = "Bình thường"
+            break;
+          case BMI < 27.3:
+            message = "Thừa cân nhẹ"
+            break;
+          case BMI < 32.3:
+            message = "Trên lý tưởng"
+            break;
+          case BMI > 32.3:
+            message = "Béo phì"
+            break;
+        }
+      } else {
+        switch (true) {
+          case BMI < 20.7:
+            message = "Gầy"
+            break;
+          case BMI < 26.4:
+            message = "Bình thường"
+            break;
+          case BMI < 27.8:
+            message = "Thừa cân nhẹ"
+            break;
+          case BMI < 31.1:
+            message = "Trên lý tưởng"
+            break;
+          case BMI > 31.1:
+            message = "Béo phì"
+            break;
+        }
+      }
+      if (!BMI) {
+        result.innerText = `${message}`
+      } else
+      result.innerText = `${BMI} | ${message}` 
+      
+    }
+    function initialApp() {
+        result()
+        
+    }
+    initialApp()
+  </script>
+</html>
