@@ -70,7 +70,8 @@
       const result = document.querySelector(".ketqua h2")
       if (BMI === null || sex === null) {
         message = "Hãy nhập chiều cao và cân nặng"
-        
+        result.innerText = `${message}`
+        return
       } else
       if (sex === 'nu') {
         switch (true) {
@@ -109,11 +110,7 @@
             break;
         }
       }
-      if (!BMI) {
-        result.innerText = `${message}`
-      } else
       result.innerText = `${BMI} | ${message}` 
-      
     }
     function initialApp() {
         result()
