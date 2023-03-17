@@ -35,28 +35,48 @@
         
     // }
 
-    function loadProducts(x) {
-        axios.get(`https://jsonplaceholder.typicode.com/users?_limit=5&_page=${x}`).then((res) => {
-            console.log(11, res.data);
-        })
+    // function loadProducts(x) {
+    //     axios.get(`https://jsonplaceholder.typicode.com/users?_limit=5&_page=${x}`).then((res) => {
+    //         console.log(11, res.data);
+    //     })
+    // }
+    // const next = document.getElementById("next")
+    // const back = document.getElementById("back")
+    // var x = 1
+    // back.addEventListener("click", function(){
+    //     if (x==1) {
+    //         return
+    //     }else x-=1
+    //     loadProducts(x)
+    // })
+    // next.addEventListener("click", function(){
+    //     if (x==2) {
+    //         return
+    //     }else x+=1
+    //     loadProducts(x)
+    // })
+    // // loadXMLDoc()
+    // // fetchProducts()
+    // loadProducts(x)
+
+
+
+    let dosecond = () =>{
+        console.log('do second');
     }
-    const next = document.getElementById("next")
-    const back = document.getElementById("back")
-    var x = 1
-    back.addEventListener("click", function(){
-        if (x==1) {
-            return
-        }else x-=1
-        loadProducts(x)
+    let dofirst = new Promise((resolve, reject) =>{
+        setTimeout(() =>{
+            console.log('do first');
+            resolve()
+        },500)
     })
-    next.addEventListener("click", function(){
-        if (x==2) {
-            return
-        }else x+=1
-        loadProducts(x)
-    })
-    // loadXMLDoc()
-    // fetchProducts()
-    loadProducts(x)
+
+    async function print(){
+        const data = await fetchdata()
+        console.log(data);
+    }
+
+    dofirst.then(dosecond)
 </script>
+<script type="module" src="script.js"></script>
 </html>
