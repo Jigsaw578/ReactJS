@@ -12,10 +12,8 @@ form.addEventListener("submit", e => {
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&appid=${apiKey}&units=metric`;
 
-  fetch(url)
-    .then(response => response.json())
-    .then(data => {
-      const { main, name, sys, weather } = data;
+  axios.get(url).then((res)  => {
+      const { main, name, sys, weather } = res.data;
       const icon = `https://openweathermap.org/img/wn/${
         weather[0]["icon"]
       }@2x.png`;

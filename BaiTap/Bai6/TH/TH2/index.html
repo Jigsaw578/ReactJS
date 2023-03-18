@@ -13,21 +13,29 @@
       <input type="text" placeholder="Add todo" name="todo"/>
       <button type="submit" onclick="handleSubmitform(event)">Add</button>
     </form>
-    <ul></ul>
+    <ul></ul> 
     <button onclick="handleback()">Back</button>
     <button onclick="handlenext()">Next</button>
   </body>
   <script>
     let todos = []
     let page = 1
+    let id = null
 
     const todoList = document.querySelector("ul")
 
     const form = document.querySelector("form")
 
     function handleDelete(index) {
-        console.log(99, todos[index].id);
-        render()
+        deleteTodo(index)
+    }
+
+    function handleEdit(index){
+        const input = document.querySelector('input[name="todo"]')
+        input.value = todos[index-1].title
+        id = index
+        const btn = form.querySelector('button[type="submit"]');
+        btn.innerHTML = "Edit"
     }
 
     function handleback() {
@@ -46,6 +54,20 @@
         initialApp(page)
     }
 
+    function deleteTodo (id) {
+        axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`).then(function(res){
+            initialApp()
+        })
+
+    }
+
+    function editTodo (id, title) {
+        axios.put(`https://jsonplaceholder.typicode.com/todos/${id}`,{'title': title}).then(function(res){
+            initialApp()
+        })
+
+    }
+
     function addTodo(todo) {
         axios.post("https://jsonplaceholder.typicode.com/todos",todo).then(function(res){
             initialApp()
@@ -62,31 +84,32 @@
             return alert ("pl enter your todo")
         }
 
-        addTodo({
-            userId: 1,
+        if (id === null) {
+            addTodo({
+                userId: 1,
 
-            title: value,
+                title: value,
 
-            completed: false
-        })
+                completed: false
+            })
+        } else {
+            editTodo(id, input.value)
+        }
+
+        input.value = ""
+        const btn = form.querySelector('button[type="submit"]');
+        btn.innerText = 'Add'
+        render()
+        
     }
 
     function render() {
         const todoElement = todos.map(function(todo){
             return `<li>
-                <button> ${todo.title}</button>
+                <button onclick="handleDelete(${todo.id})"> ${todo.title}</button> <button onclick="handleEdit(${todo.id})">Edit</button>
                 </li>`
         })
         todoList.innerHTML = todoElement.join("")
-
-        const deleteButtons  = document.querySelectorAll("ul button")
-
-
-        deleteButtons.forEach(function(deleteButton, index) {
-            deleteButton.addEventListener("click", function(){
-                handleDelete(index)
-            })
-        })
 
     }
     function initialApp(page) {

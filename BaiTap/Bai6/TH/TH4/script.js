@@ -5,15 +5,16 @@ const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 
 
 async function getPopularMovies() {
-    let data = []
+    let datas = []
     try {
-        const response = await fetch(API_URL)
-        const responseData = await response.json()
-        data = responseData?.results
+        await axios.get(API_URL).then((res)=>{
+        datas = res.data.results
+        console.log(datas);
+    })
     } catch (error) {
         console.log(error)
     }
-    return data
+    return datas
 }
 
 const moviesDiv = document.getElementById("movies")
