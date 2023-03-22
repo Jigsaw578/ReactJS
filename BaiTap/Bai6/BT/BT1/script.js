@@ -44,8 +44,17 @@ function handleShow(id) {
   pokemonimg.innerHTML = Showpokemonimg;
 
   var Showpokemontype = [];
-  for (let j = 0; j < pokemons[id].types.length; j++) {
-    Showpokemontype[j] = [pokemons[id].types[j]].map((pokemon) => {
+  // for (let j = 0; j < pokemons[id].types.length; j++) {
+  //   Showpokemontype[j] = [pokemons[id].types[j]].map((pokemon) => {
+  //     return `
+  //                   <div class="col-5 border border-dark rounded m-2 text-center pt-2">
+  //                   <p>${pokemon.type.name}</p>
+  //               </div>
+  //           `;
+  //   });
+  //   pokemontype.innerHTML = Showpokemontype.join("");
+  // }
+    Showpokemontype = (pokemons[id].types).map((pokemon) => {
       return `
                     <div class="col-5 border border-dark rounded m-2 text-center pt-2">
                     <p>${pokemon.type.name}</p>
@@ -53,7 +62,6 @@ function handleShow(id) {
             `;
     });
     pokemontype.innerHTML = Showpokemontype.join("");
-  }
 }
 
 for (let id = 1; id <= 20; id++) {
