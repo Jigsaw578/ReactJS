@@ -32,3 +32,5 @@ function onlyNumbers(array: any[]) {
     const lists = await allPromise;
     console.log(lists);
   }
+
+  getData();
