@@ -25,12 +25,6 @@ function render() {
 
   pokemonname.innerHTML = pokemonnames.join("");
 
-  // showindexs.forEach((showindex, index) =>{
-  //     showindex.addEventListener("click", () =>{
-  //         console.log(555,index);
-  //         handleShow(index)
-  //     })
-  // })
 }
 
 function handleShow(id) {
@@ -44,16 +38,6 @@ function handleShow(id) {
   pokemonimg.innerHTML = Showpokemonimg;
 
   var Showpokemontype = [];
-  // for (let j = 0; j < pokemons[id].types.length; j++) {
-  //   Showpokemontype[j] = [pokemons[id].types[j]].map((pokemon) => {
-  //     return `
-  //                   <div class="col-5 border border-dark rounded m-2 text-center pt-2">
-  //                   <p>${pokemon.type.name}</p>
-  //               </div>
-  //           `;
-  //   });
-  //   pokemontype.innerHTML = Showpokemontype.join("");
-  // }
     Showpokemontype = (pokemons[id].types).map((pokemon) => {
       return `
                     <div class="col-5 border border-dark rounded m-2 text-center pt-2">
