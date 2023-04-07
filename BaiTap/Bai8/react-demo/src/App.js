@@ -2,6 +2,11 @@ import logo from "./logo.svg";
 import "./App.css";
 import AppButton from "./Bai10/components/Button";
 import B2App from "./Bai9/BT2";
+import TH1 from "./Bai10/TH1";
+import TH2 from "./Bai10/TH2";
+import TH3 from "./Bai10/TH3";
+import BT1 from "./Bai10/BT1";
+import BT2 from "./Bai10/BT2";
 
 function App() {
   //   const ismessage = true
@@ -30,7 +35,7 @@ function App() {
     //   </form>
 
     <div>
-      <B2App />
+      <BT2 />
     </div>
   );
 }
