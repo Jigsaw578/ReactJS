@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import styles from './styles.module.css';
-export default function TH2() {
+export default function B10TH2() {
     const [numClicked, setNumClicked] = useState(0);
     const handleClick = () => {
         setNumClicked((current) => {

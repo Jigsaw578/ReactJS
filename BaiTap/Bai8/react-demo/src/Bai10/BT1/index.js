@@ -1,7 +1,7 @@
 import React from "react";
 import styles from './styles.module.css'
 
-export default function BT1() {
+export default function B10BT1() {
     return (
         <div className={styles.container}>
             <div className={styles.sidebar}>

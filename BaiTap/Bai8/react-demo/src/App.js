@@ -2,11 +2,11 @@ import logo from "./logo.svg";
 import "./App.css";
 import AppButton from "./Bai10/components/Button";
 import B2App from "./Bai9/BT2";
-import TH1 from "./Bai10/TH1";
-import TH2 from "./Bai10/TH2";
-import TH3 from "./Bai10/TH3";
-import BT1 from "./Bai10/BT1";
-import BT2 from "./Bai10/BT2";
+import Mycom from "./Bai12/Test";
+import B12TH1 from "./Bai12/TH1";
+import B12TH2 from "./Bai12/TH2";
+import B12TH3 from "./Bai12/TH3";
+import B12TH4 from "./Bai12/TH4";
 
 function App() {
   //   const ismessage = true
@@ -35,7 +35,7 @@ function App() {
     //   </form>
 
     <div>
-      <BT2 />
+      <B12TH4 />
     </div>
   );
 }

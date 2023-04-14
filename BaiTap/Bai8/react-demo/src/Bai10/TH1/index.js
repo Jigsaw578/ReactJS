@@ -4,7 +4,7 @@ import { base64Photo } from './Constant';
 import Logo from './logo.svg';
 import DeleteIcon from './DeleteIcon';
 
-export default function TH1() {
+export default function B10TH1() {
     return (
         <div className='container'>
             <div>Đây là hướng dẫn dùng ảnh trong ReactJs</div>

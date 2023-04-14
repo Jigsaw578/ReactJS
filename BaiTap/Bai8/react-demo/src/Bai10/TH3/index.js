@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./App.module.css";
 
-export default function TH3() {
+export default function B10TH3() {
 
     return (
         <div className={styles.container}>

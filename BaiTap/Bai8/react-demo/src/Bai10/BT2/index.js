@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import styled from "styled-components";
 
-export default function BT2() {
+export default function B10BT2() {
     const [time, settime] = useState("day")
     function Nightclick() {
         settime("night")
