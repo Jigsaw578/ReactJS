@@ -7,6 +7,9 @@ import B12TH1 from "./Bai12/TH1";
 import B12TH2 from "./Bai12/TH2";
 import B12TH3 from "./Bai12/TH3";
 import B12TH4 from "./Bai12/TH4";
+import Testrouter from "./Bai14/Test";
+import B14BT1 from "./Bai14/BT1";
+import B14BT2 from "./Bai14/BT2";
 
 function App() {
   //   const ismessage = true
@@ -35,7 +38,7 @@ function App() {
     //   </form>
 
     <div>
-      <B12TH4 />
+      <B14BT2 />
     </div>
   );
 }
