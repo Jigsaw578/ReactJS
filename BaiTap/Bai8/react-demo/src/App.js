@@ -1,4 +1,5 @@
 import logo from "./logo.svg";
+import { Provider } from 'react-redux'
 import "./App.css";
 import AppButton from "./Bai10/components/Button";
 import B2App from "./Bai9/BT2";
@@ -15,6 +16,9 @@ import TestForm from "./Bai15/Test/TestUseForm";
 import SignupForm, { ValidationSchemaExample } from "./Bai15/Test/Testformik";
 import B15BT1 from "./Bai15/BT1";
 import B15BT2 from "./Bai15/BT2";
+import { store } from "./Bai16/store";
+import B16 from "./Bai16/test";
+import B16TH1 from "./Bai16/TH1";
 
 function App() {
   //   const ismessage = true
@@ -42,9 +46,13 @@ function App() {
     //     <button type="submit">Submit</button>
     //   </form>
 
-    <div>
-      <B15BT2 />
-    </div>
+    // <div>
+    //   <B15BT2 />
+    // </div>
+
+    <Provider store={store}>
+      <B16TH1 />
+    </Provider>
   );
 }
 
