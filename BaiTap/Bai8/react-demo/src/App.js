@@ -19,6 +19,8 @@ import B15BT2 from "./Bai15/BT2";
 import { store } from "./Bai16/store";
 import B16 from "./Bai16/test";
 import B16TH1 from "./Bai16/TH1";
+import B16BT1 from "./Bai16/BT1/App";
+import B16BT2 from "./Bai16/BT2/App";
 
 function App() {
   //   const ismessage = true
@@ -50,9 +52,9 @@ function App() {
     //   <B15BT2 />
     // </div>
 
-    <Provider store={store}>
-      <B16TH1 />
-    </Provider>
+    // <Provider store={store}>
+    <B16BT2 />
+    // </Provider>
   );
 }
 
