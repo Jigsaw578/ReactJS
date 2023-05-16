@@ -18,9 +18,12 @@ import B15BT1 from "./Bai15/BT1";
 import B15BT2 from "./Bai15/BT2";
 import { store } from "./Bai16/store";
 import B16 from "./Bai16/test";
-import B16TH1 from "./Bai16/TH1";
 import B16BT1 from "./Bai16/BT1/App";
 import B16BT2 from "./Bai16/BT2/App";
+import B16TH1 from "./Bai16/TH1/App";
+import B16TH2 from "./Bai16/TH2/App";
+import B16TH3 from "./Bai16/TH3/App";
+import B16TH4 from "./Bai16/TH4/App";
 
 function App() {
   //   const ismessage = true
@@ -53,7 +56,7 @@ function App() {
     // </div>
 
     // <Provider store={store}>
-    <B16BT2 />
+    <B16TH4 />
     // </Provider>
   );
 }
