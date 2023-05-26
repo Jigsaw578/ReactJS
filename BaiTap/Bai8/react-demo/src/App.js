@@ -24,6 +24,10 @@ import B16TH1 from "./Bai16/TH1/App";
 import B16TH2 from "./Bai16/TH2/App";
 import B16TH3 from "./Bai16/TH3/App";
 import B16TH4 from "./Bai16/TH4/App";
+import Test from "./Bai17/test/test";
+import B17TH2 from "./Bai17/TH2/app";
+import B17TH3 from "./Bai17/TH3";
+import B17BT1 from "./Bai17/BT1";
 
 function App() {
   //   const ismessage = true
@@ -56,7 +60,7 @@ function App() {
     // </div>
 
     // <Provider store={store}>
-    <B16TH4 />
+    <B17BT1 />
     // </Provider>
   );
 }
