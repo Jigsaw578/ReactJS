@@ -28,6 +28,7 @@ import Test from "./Bai17/test/test";
 import B17TH2 from "./Bai17/TH2/app";
 import B17TH3 from "./Bai17/TH3";
 import B17BT1 from "./Bai17/BT1";
+import Upl from "./Bai18/testupload";
 
 function App() {
   //   const ismessage = true
@@ -60,7 +61,7 @@ function App() {
     // </div>
 
     // <Provider store={store}>
-    <B17BT1 />
+    <Upl />
     // </Provider>
   );
 }
